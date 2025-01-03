@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>คำนวณค่าไฟฟ้า</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>คำนวณค่าไฟฟ้า</h1>
+    <div class="input-group">
+      <label for="kwh">พลังงานที่ใช้ (kWh):</label>
+      <input type="number" id="kwh" placeholder="ใส่จำนวนพลังงาน">
+    </div>
+    <div class="input-group">
+      <label for="price">ค่าไฟต่อหน่วย (บาท/kWh):</label>
+      <input type="number" id="price" placeholder="ใส่ราคาต่อหน่วย">
+    </div>
+    <button onclick="calculate()">คำนวณ</button>
+    <p id="result"></p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
