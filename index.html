@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
+  <div class="card">
     <h1>คำนวณค่าไฟฟ้า</h1>
     <div class="input-group">
       <label for="kwh">พลังงานที่ใช้ (kWh):</label>
@@ -18,11 +18,23 @@
       <input type="number" id="price" placeholder="ใส่ราคาต่อหน่วย">
     </div>
     <button onclick="calculate()">คำนวณ</button>
-    <p id="result"></p>
+    <div id="result"></div>
   </div>
-  <script src="script.js"></script>
+
+  <script>
+    function calculate() {
+      const kwh = document.getElementById('kwh').value;
+      const price = document.getElementById('price').value;
+      const resultDiv = document.getElementById('result');
+
+      if (kwh && price) {
+        const total = (kwh * price).toFixed(2);
+        resultDiv.textContent = `ค่าไฟฟ้ารวม: ฿${total}`;
+      } else {
+        resultDiv.textContent = 'กรุณากรอกข้อมูลให้ถูกต้อง!';
+      }
+    }
+  </script>
 </body>
 </html>
 
-<link rel="stylesheet" href="style.css">
-<script src="script.js" defer></script>

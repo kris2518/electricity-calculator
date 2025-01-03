@@ -1,63 +1,90 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f8ff;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  background-color: #171717;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.card {
+  background-color: #313131;
+  color: #fff;
+  width: 350px;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+  text-align: center;
+}
+@property --angle{
+  syntax: "<angle>";
+  initial-value: : 0deg;
+  inherits; false;
+}
+.card::before,
+.card::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% + 16px);
+  height: calc(100% + 16px);
+  border-radius: 8px;
+  z-index: -1;
+  background-image: conic-gradient(from 0deg, #ea2027, #f6ff62, #44db32, #18dcff, #3742fa, #ea2027);
+  animation: spin 4s linear infinite;
+}
+
+.card::before {
+  filter: blur(8px);
+}
+
+@keyframes spin{
+  from{
+      --angle:0deg;
   }
-  
-  .container {
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    max-width: 400px;
-    width: 100%;
+  to{
+      --angle: 360deg; 
   }
-  
-  h1 {
-    margin-bottom: 20px;
-  }
-  
-  .input-group {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-  }
-  
-  button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  #result {
-    margin-top: 20px;
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: calc(100% - 20px);
+  padding: 8px;
+  margin: 0 auto;
+  border: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
